@@ -86,7 +86,7 @@ const TopSection = ({
               </div>
 
               <p className="slider-below-text">
-                Buy {value} Shiboki Cats{" "}
+                Buy {value} Shiboki{" "}
                 <span className="big-font">
                   {(value * price).toFixed(4)} Ether
                 </span>
