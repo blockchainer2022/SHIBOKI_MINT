@@ -113,7 +113,7 @@ const TopSection = ({
                   }
                   disabled={!account ? true : false}
                 >
-                  {totalSupply === 2000 ? "All Sold" : "Shiboki "}
+                  {totalSupply === 2000 ? "All Sold" : "Mint Shiboki"}
                 </Button>
                 <br />
                 <span
