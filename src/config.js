@@ -111,10 +111,12 @@ export const contractAbi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "OWNER_RESERVED",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
+    inputs: [
+      { internalType: "address[]", name: "_recipients", type: "address[]" },
+    ],
+    name: "airdrop",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -132,6 +134,13 @@ export const contractAbi = [
     name: "balanceOf",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "burnUnsold",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -159,7 +168,14 @@ export const contractAbi = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "_count", type: "uint256" }],
+    inputs: [],
+    name: "mintCount",
+    outputs: [{ internalType: "uint16", name: "", type: "uint16" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint16", name: "_count", type: "uint16" }],
     name: "mintNFT",
     outputs: [],
     stateMutability: "payable",
@@ -262,10 +278,15 @@ export const contractAbi = [
     type: "function",
   },
   {
-    inputs: [
-      { internalType: "uint256", name: "_ownerReserved", type: "uint256" },
-    ],
-    name: "setOwnerReserved",
+    inputs: [{ internalType: "uint256", name: "_max_supply", type: "uint256" }],
+    name: "setMaxSupply",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint16", name: "_mintCount", type: "uint16" }],
+    name: "setMintCount",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -292,23 +313,6 @@ export const contractAbi = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "index", type: "uint256" }],
-    name: "tokenByIndex",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "index", type: "uint256" },
-    ],
-    name: "tokenOfOwnerByIndex",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     name: "tokenURI",
     outputs: [{ internalType: "string", name: "", type: "string" }],
@@ -318,7 +322,7 @@ export const contractAbi = [
   {
     inputs: [],
     name: "totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [{ internalType: "uint16", name: "", type: "uint16" }],
     stateMutability: "view",
     type: "function",
   },
@@ -348,13 +352,6 @@ export const contractAbi = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "address", name: "_owner", type: "address" }],
-    name: "walletOfOwner",
-    outputs: [{ internalType: "uint256[]", name: "", type: "uint256[]" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "withdrawAll",
     outputs: [],
@@ -362,7 +359,5 @@ export const contractAbi = [
     type: "function",
   },
 ];
-
-// export const contractAddress = "0xD73eE48F78da0B851892A60772acC9d0218374FE";
-// export const contractAddress = "0x25A0d5147BaF36D6DE8d85EA461162810870Dd74";
-export const contractAddress = "0x13A435137b213C1bE0Ce81F123F0850e3FB7F427";
+// export const contractAddress = "0x13A435137b213C1bE0Ce81F123F0850e3FB7F427";
+export const contractAddress = "0xD264E41D0188242e961053490F3Eb780C462B388";
