@@ -98,6 +98,13 @@ export const contractAbi = [
   },
   {
     inputs: [],
+    name: "FREECLAIM_RESERVED",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "MAX_ALLOWED",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
@@ -141,6 +148,27 @@ export const contractAbi = [
     name: "burnUnsold",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "claimNFT",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "freeClaim",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "freeClaimEligible",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -190,6 +218,13 @@ export const contractAbi = [
   },
   {
     inputs: [],
+    name: "oldContractAddress",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "owner",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
@@ -200,6 +235,13 @@ export const contractAbi = [
     name: "ownerOf",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pauseFreeClaim",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -292,6 +334,15 @@ export const contractAbi = [
     type: "function",
   },
   {
+    inputs: [
+      { internalType: "address", name: "_oldContractAddress", type: "address" },
+    ],
+    name: "setOldContractAddress",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [{ internalType: "uint256", name: "_newPrice", type: "uint256" }],
     name: "setPrice",
     outputs: [],
@@ -346,6 +397,13 @@ export const contractAbi = [
   },
   {
     inputs: [],
+    name: "unpauseFreeClaim",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "unpauseSale",
     outputs: [],
     stateMutability: "nonpayable",
@@ -360,4 +418,4 @@ export const contractAbi = [
   },
 ];
 // export const contractAddress = "0x13A435137b213C1bE0Ce81F123F0850e3FB7F427";
-export const contractAddress = "0xD264E41D0188242e961053490F3Eb780C462B388";
+export const contractAddress = "0x93b502E14dB1Ac82C5b581C3F233577756D573C1";
